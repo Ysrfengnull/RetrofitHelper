@@ -34,7 +34,7 @@ public class RetrofitManager {
     //全局OkHttpClient对象
     private static volatile OkHttpClient mOkHttpClient;
     private static volatile Retrofit mRetrofit;
-
+    private   static  String BASE_API_URL = "http://kyapptest.log56.com/";
     /**
      * 获取OkHttpClient实例
      *
@@ -73,7 +73,7 @@ public class RetrofitManager {
     public static <T> T create(Class<T> clazz) {
         if (null == mRetrofit) {
             synchronized (RetrofitManager.class) {
-                mRetrofit = createRetrofit("");//baseurl
+                mRetrofit = createRetrofit(BASE_API_URL);//baseurl
             }
         }
         return mRetrofit.create(clazz);

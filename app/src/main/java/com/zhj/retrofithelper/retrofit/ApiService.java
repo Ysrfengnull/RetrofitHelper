@@ -43,7 +43,7 @@ public interface ApiService {
     Observable<ResponseBody> getBookDetail(@FieldMap() Map<String, String> map);
 
     @Multipart  //上传图片和文本测试
-    @POST("")
+    @POST(Api.UPLOAD_LOG_FILE)
     Observable<ResponseBody> postImage(@Part List<MultipartBody.Part> parts, @PartMap Map<String, RequestBody> map);
 
     @GET
