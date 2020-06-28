@@ -29,10 +29,10 @@ public class LoggingInterceptor implements Interceptor {
         if (request.body() != null) {
             request.body().writeTo(requestBuffer);
         } else {
-            Log.d("LogTAG", "request.body() == null");
+            Log.d("oye", "request.body() == null");
         }
         //打印url信息
-        Log.w(RetrofitManager.TAG,
+        Log.d(RetrofitManager.TAG,
                 "intercept: " + request.url() + (request.body() != null ? "?"
                         + parseParams(request.body(), requestBuffer) : ""));
         final Response response = chain.proceed(request);

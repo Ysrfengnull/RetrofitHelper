@@ -59,8 +59,8 @@ public class FileResponseBody extends ResponseBody {
             public long read(Buffer sink, long byteCount) throws IOException {
                 long bytesRead = super.read(sink, byteCount);
                 mProgress += bytesRead == -1 ? 0 : bytesRead;
-                Log.d("apk", "byteCount-->" + mProgress);
-                Log.d("apk", "tatalCount-->" + contentLength());
+                Log.d("oye apk", "byteCount-->" + mProgress);
+                Log.d("oye apk", "tatalCount-->" + contentLength());
                 messageEvent.setTotal(contentLength());
                 messageEvent.setCurrent(mProgress);
                 EventBus.getDefault().post(messageEvent);

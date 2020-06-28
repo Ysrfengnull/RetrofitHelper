@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private String url = "http://apk.bearead.com/app-bearead-release.apk";
+    private String url = "https://test-static-public-log56-com.oss-cn-hangzhou.aliyuncs.com/kydd_app/kydd/kydd_pro_ms_2.9.10_legu_signed.apk";
 
     public void downloadApk(View view) {
         RxHelper.download(RetrofitManager.create(ApiService.class)
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onError(int code, String msg) {
-                Log.d("","下载失败");
+                Log.d("oye","下载失败");
             }
         });
     }
@@ -76,15 +76,15 @@ public class MainActivity extends AppCompatActivity {
                 .postImage(ParamsMap.buildImageFiles(files, new RxResponseCallBack() {
                     @Override
                     public void onProgress(long current, long total) {
-                        Log.d("image", "current--->" + current);
-                        Log.d("image", "total--->" + total);
+                        Log.d("oye image", "current--->" + current);
+                        Log.d("oye image", "total--->" + total);
                         int progress = (int) (100 * current / total);
                         progressBar.setProgress(progress);
                     }
                 }), ParamsMap.create().put("aaa", "测试").put("bbb", "测试").buildRequestBody()), new RxResponseCallBack() {
             @Override
             public void onSuccess(Object o) {
-                Log.d("image", "json----->" + o);
+                Log.d("oye image", "json----->" + o);
             }
         });
     }

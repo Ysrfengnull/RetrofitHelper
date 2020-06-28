@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitManager {
 
-    public static final String TAG = "RetrofitManager";
+    public static final String TAG = "oye";
     //链接超时时间
     private static long CONNECT_TIMEOUT = 60L;
     //读取超时时间

@@ -56,7 +56,7 @@ public class RxHelper {
                         public void accept(@NonNull ResponseBody responseBody) throws Exception {
                             if (null != responseBody) {
                                 File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/retrofit.apk");
-                                Log.d("apk", "path-->" + file.getAbsolutePath());
+                                Log.d("oye apk", "path-->" + file.getAbsolutePath());
                                 boolean b = FIleHelper.saveFile(file, responseBody.byteStream());
                                 if (b && file.exists()) {
                                     if (null != rxresponseCallBack) {
